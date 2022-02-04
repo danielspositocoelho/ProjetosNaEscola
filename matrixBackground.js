@@ -12,7 +12,7 @@ canvas.width = window.innerWidth;
 
 //estabelecendo array com os chars do efeito
 const matrixChars = ["日","ﾊ","ﾐ","ﾋ","ｰ","ｳ","ｼ","ﾅ","ﾓ","ﾆ","ｻ","ﾜ","ﾂ","ｵ","ﾘ","ｱ","ﾎ","ﾃ","ﾏ","ｹ","ﾒ","ｴ","ｶ","ｷ","ﾑ","ﾕ","ﾗ","ｾ","ﾈ","ｽ","ﾀ","ﾇ","ﾍ",":","・",".","=","*","+","-","<",">","¦","｜","ﾘ"];
-const fontSize = 18;
+const fontSize = 25;
 
 //dividindo canvas por colunas : tamanho da fonte / tamanho do canvas
 const columns = canvas.width/fontSize;
@@ -31,7 +31,7 @@ function draw()
 
     //definiindo cor e estilo da fonte
     background.fillStyle = '#0F0';
-    background.font = `${fontSize}px Arial`;
+    background.font = `${fontSize}px monospace`;
 
     for (let i = 0; i < drops.length; i++)
     {
@@ -46,7 +46,7 @@ function draw()
         }
     }
     //chamada recursiva para animar quadro a quadro, redesenhando a cadeia de chars
-    window.requestAnimationFrame(draw);
+    window.requestAnimationFrame(draw); // roda a 60 quadros por segundo. EXISTE ALGUMA FORMA DE RODAR A MENOS?
 }
 
 draw();
